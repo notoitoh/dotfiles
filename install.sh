@@ -3,6 +3,10 @@
 printf "password: "
 read -s password
 echo "$password" | sudo -S echo "OK"
+if [ $? != 0 ]; then
+    echo "Password failed"
+    exit 1
+fi
 
 echo "Install dotfiles..."
 
@@ -41,9 +45,9 @@ fi
 
 echo "Install for $(check-os)"
 
+. ${SCRIPT_DIR}/src/install/brew/install.sh
 . ${SCRIPT_DIR}/src/install/.bash_profile.d/install.sh
 . ${SCRIPT_DIR}/src/install/.bashrc.d/install.sh
-. ${SCRIPT_DIR}/src/install/brew/install.sh
 . ${SCRIPT_DIR}/src/install/vscode/install.sh
 . ${SCRIPT_DIR}/src/install/awscli/install.sh
 

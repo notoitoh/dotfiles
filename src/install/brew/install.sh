@@ -10,6 +10,7 @@ if [[ $(check-os) == "linux" ]]; then
 
     brew install vim
     brew install n
+    brew install yarn
 fi
 
 if [[ $(check-os) == "mac" ]]; then
@@ -22,5 +23,6 @@ if [[ $(check-os) == "mac" ]]; then
     brew install visual-studio-code --cask
     brew install vim
     brew install n
+    brew install yarn
 fi
 echo "Install brew completed."

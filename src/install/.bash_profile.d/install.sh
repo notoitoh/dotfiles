@@ -1,10 +1,10 @@
 echo "Install bash_profile..."
 
 if [[ $(check-os) == "linux" ]]; then
-    echo "export DOTFILES_DIR=\"${DOTFILES_DIR_EXPECT}\"" > ${SCRIPT_DIR}/src/install/shared/.bash_profile.d/generated.local.sh
+    echo "" > ${SCRIPT_DIR}/resources/.bash_profile.d/generated.local.sh
 fi
 if [[ $(check-os) == "mac" ]]; then
-    echo "export DOTFILES_DIR=\"${DOTFILES_DIR_EXPECT}\";export PATH=\"\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin\"" > ${SCRIPT_DIR}/src/install/shared/.bash_profile.d/generated.local.sh
+    echo "export PATH=\"\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin\"" > ${SCRIPT_DIR}/resources/.bash_profile.d/generated.local.sh
 fi
 
 
