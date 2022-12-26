@@ -1,13 +1,9 @@
 {
-  "files": [
-    "src/**/*.ts"
-  ],
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {},
     "declaration": false,
     "experimentalDecorators": true,
-    "mapRoot": "./",
     "module": "NodeNext",
     "target": "ESNext",
     "moduleResolution": "node",

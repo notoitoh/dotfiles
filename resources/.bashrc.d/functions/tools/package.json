@@ -4,8 +4,8 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "aws-sso-check-login": "node src/aws-sso-check-login/aws-sso-check-login.js",
-    "aws-sso-check-login:build": "tsc src/aws-sso-check-login/aws-sso-check-login.ts"
+    "aws-sso-check-login": "node src/aws-sso-check-login/dest/aws-sso-check-login/aws-sso-check-login.js",
+    "aws-sso-check-login:build": "tsc -p src/aws-sso-check-login/tsconfig.json"
   },
   "engines": {
     "node": "16"
