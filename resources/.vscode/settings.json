@@ -159,6 +159,7 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
 
   "git.confirmSync": false,
+  "git.autofetch": true,
   "gitlens.views.searchAndCompare.avatars": false,
   "gitlens.views.searchAndCompare.files.layout": "list",
   "diffEditor.ignoreTrimWhitespace": false,
