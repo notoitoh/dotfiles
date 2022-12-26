@@ -1,0 +1,167 @@
+{
+  "workbench.editor.showTabs": false,
+  "workbench.panel.defaultLocation": "left",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.profiles.linux": {
+    "zsh": {
+      "path": "zsh",
+      "args": [
+        "-i"
+      ],
+      "overrideName": true,
+      "icon": "terminal-bash",
+      "color": "terminal.ansiGreen"
+    }
+  },
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.profiles.osx": {
+    "zsh": {
+      "path": "zsh",
+      "args": [
+        "-i"
+      ],
+      "overrideName": true,
+      "icon": "terminal-bash",
+      "color": "terminal.ansiGreen"
+    }
+  },
+
+  "files.autoSaveDelay": 3000,
+  "files.autoSave": "afterDelay",
+
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+
+  "editor.formatOnType": true,
+  "editor.formatOnPaste": true,
+  "editor.fontFamily": "'HackGen', 'monospace'",
+  "editor.fontSize": 16,
+  "editor.stickyTabStops": true,
+  "editor.stickyScroll.enabled": true,
+  "editor.tabSize": 2,
+
+  "vim.easymotion": true,
+  "vim.useSystemClipboard": true,
+  "vim.highlightedyank.enable": true,
+  "vim.camelCaseMotion.enable": true,
+  "vim.statusBarColorControl": true,
+  "vim.visualstar": true,
+  "vim.foldfix": true,
+  "vim.hlsearch": true,
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false,
+    "<C-r>": true,
+    "<C-y>": false
+  },
+  "vim.leader": "<space>",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "j"
+      ],
+      "after": [
+        "g",
+        "j"
+      ]
+    },
+    {
+      "before": [
+        "k"
+      ],
+      "after": [
+        "g",
+        "k"
+      ]
+    },
+    {
+      "before": [
+        "<C-n>"
+      ],
+      "after": [
+        "g",
+        "b"
+      ]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "j"
+      ],
+      "after": [
+        "g",
+        "j"
+      ]
+    },
+    {
+      "before": [
+        "k"
+      ],
+      "after": [
+        "g",
+        "k"
+      ]
+    },
+    {
+      "before": [
+        "n"
+      ],
+      "after": [
+        "g",
+        "b"
+      ]
+    }
+  ],
+  "vim.insertModeKeyBindings": [
+    {
+      "before": [
+        "j",
+        "j"
+      ],
+      "after": [
+        "<ESC>"
+      ]
+    }
+  ],
+
+  "yaml.customTags": [
+    "!And",
+    "!And sequence",
+    "!If",
+    "!If sequence",
+    "!Not",
+    "!Not sequence",
+    "!Equals",
+    "!Equals sequence",
+    "!Or",
+    "!Or sequence",
+    "!FindInMap",
+    "!FindInMap sequence",
+    "!Base64",
+    "!Join",
+    "!Join sequence",
+    "!Cidr",
+    "!Ref",
+    "!Sub",
+    "!Sub sequence",
+    "!GetAtt",
+    "!GetAZs",
+    "!ImportValue",
+    "!ImportValue sequence",
+    "!Select",
+    "!Select sequence",
+    "!Split",
+    "!Split sequence"
+  ],
+
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+
+  "git.confirmSync": false,
+  "gitlens.views.searchAndCompare.avatars": false,
+  "gitlens.views.searchAndCompare.files.layout": "list",
+  "diffEditor.ignoreTrimWhitespace": false,
+
+  "hediet.vscode-drawio.theme": "atlas"
+}

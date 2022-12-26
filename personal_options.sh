@@ -1,0 +1,1 @@
+#. ${SCRIPT_DIR}/src/install/.gitconfig/install.sh

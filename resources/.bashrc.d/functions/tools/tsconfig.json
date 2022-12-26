@@ -1,0 +1,25 @@
+{
+  "files": [
+    "src/**/*.ts"
+  ],
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {},
+    "declaration": false,
+    "experimentalDecorators": true,
+    "mapRoot": "./",
+    "module": "NodeNext",
+    "target": "ESNext",
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "pretty": true,
+    "removeComments": true,
+    "outDir": "./dest",
+    "sourceMap": true,
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "allowSyntheticDefaultImports": true
+  }
+}
