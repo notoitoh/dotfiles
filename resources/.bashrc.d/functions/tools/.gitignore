@@ -3,4 +3,4 @@ dest/
 
 # yarn
 .yarn/*
-!.yarn/releases/*
+!.yarn/releases
