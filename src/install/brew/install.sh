@@ -4,7 +4,7 @@ if [[ $(check-os) == "linux" ]]; then
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/nohtoit/.profile
         eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-        sudo apt-get install build-essential zsh
+        sudo apt-get install build-essential
         brew install gcc
     fi
 

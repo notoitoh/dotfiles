@@ -4,13 +4,13 @@ function singleton() {
 }
 
 function aws-sso-check-login() {
-    node $DOTFILES_DIR/resources/.bashrc.d/functions/tools/src/aws-sso-check-login/dist/main.js $*
+    node $DOTFILES_DIR/resources/.bashrc.d/functions/tools/src/aws-sso-check-login/dest/aws-sso-check-login/aws-sso-check-login.js $*
 }
 
 AWS_ORG=$(which aws)
 function aws-with-sso() {
     sso_test=$($(aws-sso-check-login > /dev/null 2>&1) || echo $?)
-    if [ "$sso_test" -ne 0]; then
+    if [ "$sso_test" -ne 0 ]; then
         echo "Login required."
         $AWS_ORG sso login
         aws-with-sso $*

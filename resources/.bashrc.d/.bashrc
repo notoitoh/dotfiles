@@ -11,3 +11,8 @@ if [ -d "${DOTFILES_DIR}/resources/.bashrc.d/functions" ] ; then
         . "$f"
     done
 fi
+
+
+PS1='\[\e[1;32m\]\u@\h\[\e[m\]:\[\e[1;34m\]\w\[\e[m\]\$ '
+HISTTIMEFORMAT='%Y/%m/%d %H:%M:%S '
+set -o vi
