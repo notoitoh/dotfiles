@@ -1,4 +1,4 @@
-export DOTFILES_DIR="/home/nohtoit/dotfiles"
+export DOTFILES_DIR="${HOME}/dotfiles"
 
 export EDITOR=vim
 
