@@ -25,11 +25,32 @@ function check-os() {
     echo ${machine}
 }
 
+function ask {
+  while true; do
+    echo -n "$1 [y/n]: "
+    read ANS
+    case $ANS in
+      [Yy]*)
+        return 0
+        ;;  
+      [Nn]*)
+        return 1
+        ;;
+      *)
+        echo "Please enter y or n"
+        ;;
+    esac
+  done
+}
+
+
 # Check phase
 cd $SCRIPT_DIR
 if [[ "${DOTFILES_DIR}" ]]; then
     echo "This dotfiles seems to be installed already."
-    exit 1
+    if ! ask "Continue?"; then
+        exit 1
+    fi
 fi
 
 if [[ "${DOTFILES_DIR_EXPECT}" != "${SCRIPT_DIR}" ]]; then
