@@ -45,6 +45,10 @@ fi
 
 echo "Install for $(check-os)"
 
+if [[ $(check-os) == "mac" ]]; then
+    chsh -s /bin/bash
+fi
+
 . ${SCRIPT_DIR}/src/install/brew/install.sh
 . ${SCRIPT_DIR}/src/install/.bash_profile.d/install.sh
 . ${SCRIPT_DIR}/src/install/.bashrc.d/install.sh
