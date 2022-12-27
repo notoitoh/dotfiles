@@ -12,7 +12,7 @@ fi
 
 if [[ $(check-os) == "mac" ]]; then
     if [[ ! $(which brew) ]]; then
-        xcode-select --install
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
     fi
     brew tap homebrew/cask-fonts
     brew install font-hackgen

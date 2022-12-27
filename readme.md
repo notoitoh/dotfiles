@@ -1,6 +1,13 @@
 # 概要
 macOS/Ubuntuにオレオレ開発環境を構築するdotfiles
 
+# 前提
+gitがインストールされている必要がある。
+## macOSの場合
+Command line tools for Xcodeを導入しておく。
+```bash
+xcode-select --install
+```
 # インストール
 1. ~/dotfilesにこのフォルダを移動
 2. コマンド実行
