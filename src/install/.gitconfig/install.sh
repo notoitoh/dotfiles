@@ -1,3 +1,3 @@
 echo "Install .gitconfig..."
-ln -s "${SCRIPT_DIR}/resources/.gitconfig" ~/.gitconfig
+symlink-replace "${SCRIPT_DIR}/resources/.gitconfig" "${HOME}/.gitconfig"
 echo "Install .gitconfig completed."

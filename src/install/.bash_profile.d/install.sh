@@ -8,11 +8,7 @@ if [[ $(check-os) == "mac" ]]; then
 fi
 
 
-if [ -e "~/.bash_profile" ] ; then
-    mv ~/.bash_profile "${SCRIPT_DIR}/resources/.bash_profile.d/user.local.sh"
-fi
-
-ln -s "${SCRIPT_DIR}/resources/.bash_profile.d/.bash_profile" ~/.bash_profile
+symlink-backup "${SCRIPT_DIR}/resources/.bash_profile.d/.bash_profile" "${HOME}/.bash_profile" "${SCRIPT_DIR}/resources/.bash_profile.d/user.local.sh"
 
 source ~/.bash_profile
 

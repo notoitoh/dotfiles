@@ -43,9 +43,63 @@ function ask {
   done
 }
 
+function symlink-replace {
+    src=$1
+    target=$2
+    target_dir=$(dirname "${2}")
+
+    echo "Symlink \"${src}\" to \"${target}\"."
+
+    if [ ! -d "${target_dir}" ] ; then
+        mkdir -p "${target_dir}"
+    fi
+
+    if [ -L "${target}" ] ; then
+        if [[ $(readlink "${target}") == "${src}" ]] ; then
+            echo "Target \"${target}\" already installed."
+            return 0
+        fi
+    fi
+
+    if [ -e "${target}" ] ; then
+        echo "Target \"${target}\" exists."
+        if ! ask "Replace this file?"; then
+            exit 1
+        fi
+        rm -i "${target}"
+    fi
+
+    ln -s "${src}" "${target}"
+}
+
+function symlink-backup {
+    src=$1
+    target=$2
+    backup=$3
+
+    echo "Symlink \"${src}\" to \"${target}\" with backup."
+
+    if [ -L "${target}" ] ; then
+        if [[ $(readlink "${target}") == "${src}" ]] ; then
+            echo "Target \"${target}\" already installed."
+            return 0
+        fi
+    fi
+
+    if [ -e "${target}" ] ; then
+        mv "${target}" "${backup}"
+    fi
+
+    ln -s "${src}" "${target}"
+}
 
 # Check phase
 cd $SCRIPT_DIR
+
+if [ -e "${HOME}/.bash_profile" ] ; then
+    source "${HOME}/.bash_profile"
+fi
+
 if [[ "${DOTFILES_DIR}" ]]; then
     echo "This dotfiles seems to be installed already."
     if ! ask "Continue?"; then

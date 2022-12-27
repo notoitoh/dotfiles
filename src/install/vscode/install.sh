@@ -1,31 +1,13 @@
 echo "Install vscode..."
 
 if [[ $(check-os) == "linux" ]]; then
-    if [ ! -d "~/.config/Code/User" ] ; then
-        mkdir -p "~/.config/Code/User"
-    fi
-
-    if [ -e "${HOME}/.config/Code/User/settings.json" ] ; then
-        rm -i "${HOME}/.config/Code/User/settings.json"
-    fi
-
-    ln -s "${SCRIPT_DIR}/resources/.vscode/settings.json" "${HOME}/.config/Code/User/settings.json"
+    symlink-replace "${SCRIPT_DIR}/resources/.vscode/settings.json" "${HOME}/.config/Code/User/settings.json"
 fi
 if [[ $(check-os) == "mac" ]]; then
-    if [ -e "${HOME}/.config/Code/User/settings.json" ] ; then
-        rm -i "${HOME}/Library/Application Support/Code/User/settings.json"
-    fi
-
-    ln -s "${SCRIPT_DIR}/resources/.vscode/settings.json" "${HOME}/Library/Application Support/Code/User/settings.json"
+    symlink-replace "${SCRIPT_DIR}/resources/.vscode/settings.json" "${HOME}/Library/Application Support/Code/User/settings.json"
 fi
 
-if [ ! -d "~/.vscode" ] ; then
-    mkdir "~/.vscode"
-fi
-if [ -e "${HOME}/.vscode/argv.json" ] ; then
-    rm -i "${HOME}/.vscode/argv.json"
-fi
-ln -s "${SCRIPT_DIR}/resources/.vscode/argv.json" "${HOME}/.vscode/argv.json"
+symlink-replace "${SCRIPT_DIR}/resources/.vscode/argv.json" "${HOME}/.vscode/argv.json"
 
 code --install-extension "angular.ng-template"
 code --install-extension "wallabyjs.quokka-vscode"

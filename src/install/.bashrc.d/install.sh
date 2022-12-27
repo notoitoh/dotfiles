@@ -11,12 +11,8 @@ wget -P "${SCRIPT_DIR}/resources/.bashrc.d/thirdparty" https://raw.github.com/gi
 wget -P "${SCRIPT_DIR}/resources/.bashrc.d/thirdparty" https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh
 
 
-if [ -e "~/.bashrc" ] ; then
-    mv ~/.bashrc "${SCRIPT_DIR}/resources/.bashrc.d/user.local.sh"
-fi
+symlink-backup "${SCRIPT_DIR}/resources/.bashrc.d/.bashrc" "${HOME}/.bashrc" "${SCRIPT_DIR}/resources/.bashrc.d/user.local.sh"
 
-ln -s "${SCRIPT_DIR}/resources/.bashrc.d/.bashrc" ~/.bashrc
-
-source ~/.bashrc
+source "${HOME}/.bashrc"
 
 echo "Install bashrc completed."

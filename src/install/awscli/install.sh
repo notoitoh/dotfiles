@@ -18,10 +18,7 @@ if [[ ! -e "/usr/local/bin/aws" ]]; then
     cd ..
     rm -rf temp
 
-    if [[ ! -e "~/.aws" ]]; then
-        mkdir ~/.aws
-    fi
-    ln -s "${SCRIPT_DIR}/resources/.aws/config" ~/.aws/config
+    symlink-replace "${SCRIPT_DIR}/resources/.aws/config" "${HOME}/.aws/config"
 fi
 
 echo "Install awscli completed."
