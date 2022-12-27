@@ -19,6 +19,7 @@ if [[ $(check-os) == "mac" ]]; then
     brew install visual-studio-code --cask
 fi
 
+brew install wget
 brew install vim
 brew install n
 brew install yarn
