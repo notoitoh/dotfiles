@@ -16,3 +16,4 @@ fi
 
 HISTTIMEFORMAT='%Y/%m/%d %H:%M:%S '
 set -o vi
+sso-check
