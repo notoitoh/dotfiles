@@ -3,7 +3,6 @@ echo "Install brew..."
 if [[ $(check-os) == "linux" ]]; then
     if [[ ! $(which brew) ]]; then
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-        echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> "${HOME}/.profile"
         eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
         sudo apt-get install build-essential
         brew install gcc
@@ -13,6 +12,7 @@ fi
 if [[ $(check-os) == "mac" ]]; then
     if [[ ! $(which brew) ]]; then
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+        eval "$(/opt/homebrew/bin/brew shellenv)"
     fi
     brew tap homebrew/cask-fonts
     brew install font-hackgen
