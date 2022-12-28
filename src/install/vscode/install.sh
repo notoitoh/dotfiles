@@ -1,10 +1,10 @@
 echo "Install vscode..."
 
 if [[ $(check-os) == "linux" ]]; then
-    symlink-replace "${SCRIPT_DIR}/resources/.vscode/settings.json" "${HOME}/.config/Code/User/settings.json"
+  symlink-replace "${SCRIPT_DIR}/resources/.vscode/settings.json" "${HOME}/.config/Code/User/settings.json"
 fi
 if [[ $(check-os) == "mac" ]]; then
-    symlink-replace "${SCRIPT_DIR}/resources/.vscode/settings.json" "${HOME}/Library/Application Support/Code/User/settings.json"
+  symlink-replace "${SCRIPT_DIR}/resources/.vscode/settings.json" "${HOME}/Library/Application Support/Code/User/settings.json"
 fi
 
 symlink-replace "${SCRIPT_DIR}/resources/.vscode/argv.json" "${HOME}/.vscode/argv.json"
