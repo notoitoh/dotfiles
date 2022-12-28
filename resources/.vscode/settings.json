@@ -165,6 +165,7 @@
   "diffEditor.ignoreTrimWhitespace": false,
 
   "hediet.vscode-drawio.theme": "atlas",
+  "redhat.telemetry.enabled": false,
   "workbench.colorCustomizations": {
     "statusBar.background": "#005f5f",
     "statusBar.noFolderBackground": "#005f5f",
