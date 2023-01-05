@@ -11,7 +11,7 @@ AWS_ORG=$(which aws)
 
 function sso-check() {
   sso_test=$($(aws-sso-check-login > /dev/null 2>&1) || echo $?)
-  if [ "$sso_test" -ne 0 ]; then
+  if [ "$sso_test" ] && [ "$sso_test" -ne 0 ]; then
     echo "Login required."
     $AWS_ORG sso login
   fi
