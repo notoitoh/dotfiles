@@ -93,6 +93,26 @@ function symlink-backup {
   ln -s "${src}" "${target}"
 }
 
+function symlink-move {
+  new_origin=$1
+  target=$2
+
+  echo "Symlink move \"${new_origin}\" to \"${target}\"."
+
+  if [ -L "${target}" ] ; then
+    if [[ $(readlink "${target}") == "${new_origin}" ]] ; then
+      echo "Target \"${target}\" already installed."
+      return 0
+    fi
+  fi
+
+  if [ -e "${target}" ] ; then
+    mv "${target}" "${new_origin}"
+  fi
+
+  ln -s "${new_origin}" "${target}"
+}
+
 # Check phase
 cd $SCRIPT_DIR
 
@@ -131,8 +151,9 @@ fi
 . ${SCRIPT_DIR}/src/install/vscode/install.sh
 . ${SCRIPT_DIR}/src/install/awscli/install.sh
 . ${SCRIPT_DIR}/src/install/dnsmasq/install.sh
+. ${SCRIPT_DIR}/src/install/.gitconfig/install.sh
 
-. ${SCRIPT_DIR}/organization_options.sh
-. ${SCRIPT_DIR}/personal_options.sh
+#. ${SCRIPT_DIR}/organization_options.sh
+#. ${SCRIPT_DIR}/personal_options.sh
 
 echo "Install dotfiles completed."
