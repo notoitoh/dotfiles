@@ -130,6 +130,7 @@ fi
 . ${SCRIPT_DIR}/src/install/.bashrc.d/install.sh
 . ${SCRIPT_DIR}/src/install/vscode/install.sh
 . ${SCRIPT_DIR}/src/install/awscli/install.sh
+. ${SCRIPT_DIR}/src/install/dnsmasq/install.sh
 
 . ${SCRIPT_DIR}/organization_options.sh
 . ${SCRIPT_DIR}/personal_options.sh
