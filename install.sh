@@ -141,7 +141,6 @@ fi
 echo "Install for $(check-os)"
 
 if [[ $(check-os) == "mac" ]]; then
-  chsh -s /bin/bash
   defaults write -g ApplePressAndHoldEnabled -bool false
 fi
 

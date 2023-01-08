@@ -1,13 +1,25 @@
-PS1="\w \[\033[36m\]\$(__git_ps1)\[\033[00m\]\n\$ "
+function zle-line-init zle-keymap-select {
+    VIM_NORMAL="%K{208}%F{black}■%k%f%K{208}%F{white} % NORMAL %k%f%K{black}%F{208}■%k%f"
+    VIM_INSERT="%K{075}%F{black}■%k%f%K{075}%F{white} % INSERT %k%f%K{black}%F{075}■%k%f"
+    VIMPROMPT="${${KEYMAP/vicmd/$VIM_NORMAL}/(main|viins)/$VIM_INSERT}"
+    PROMPT="${VIMPROMPT}
+%K{blue}%F{white} %F{white}%~ %k%F{white} $%f "
+    zle reset-prompt
+}
 
-if [ -f "${DOTFILES_DIR}/resources/.bashrc.d/thirdparty/git-completion.bash" ]; then
-  source "${DOTFILES_DIR}/resources/.bashrc.d/thirdparty/git-completion.bash"
-fi
-if [ -f "${DOTFILES_DIR}/resources/.bashrc.d/thirdparty/git-prompt.sh" ]; then
-  source "${DOTFILES_DIR}/resources/.bashrc.d/thirdparty/git-prompt.sh"
-fi
+setopt prompt_subst
 
-GIT_PS1_SHOWDIRTYSTATE=true
-GIT_PS1_SHOWUNTRACKEDFILES=true
-GIT_PS1_SHOWSTASHSTATE=true
-GIT_PS1_SHOWUPSTREAM=auto
+PROMPT="%K{blue}%F{white} %F{white}%~ %k%F{white} $%f "
+zle -N zle-line-init
+zle -N zle-keymap-select
+
+autoload -Uz vcs_info
+setopt prompt_subst
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
+zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
+zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
+zstyle ':vcs_info:*' actionformats '[%b|%a]'
+RPROMPT=\$vcs_info_msg_0_
+
+precmd(){ vcs_info }

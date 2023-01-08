@@ -12,8 +12,18 @@ if [ -d "${DOTFILES_DIR}/resources/.bashrc.d/functions" ] ; then
   done
 fi
 
+bindkey -v
+function vi-yank-xclip {
+  zle vi-yank
+ echo "$CUTBUFFER" | pbcopy -i
+}
+
+zle -N vi-yank-xclip
+bindkey -M vicmd 'y' vi-yank-xclip
+
+autoload -Uz compinit && compinit
+
 . "${DOTFILES_DIR}/resources/.bashrc.d/prompt.sh"
 
-HISTTIMEFORMAT='%Y/%m/%d %H:%M:%S '
-set -o vi
+aws-sso-check-login --force >/dev/null
 sso-check

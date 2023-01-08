@@ -38,5 +38,3 @@ function aws() {
 function git() {
   git-with-sso $*
 }
-
-export -f singleton aws-sso-check-login aws-with-sso aws git-with-sso git
