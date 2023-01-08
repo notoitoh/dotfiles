@@ -25,6 +25,7 @@
       "color": "terminal.ansiGreen"
     }
   },
+  "terminal.integrated.enableMultiLinePasteWarning": false,
 
   "files.autoSaveDelay": 3000,
   "files.autoSave": "afterDelay",
@@ -169,7 +170,6 @@
   "workbench.colorCustomizations": {
     "statusBar.background": "#005f5f",
     "statusBar.noFolderBackground": "#005f5f",
-    "statusBar.debuggingBackground": "#005f5f",
-    "terminal.integrated.enableMultiLinePasteWarning": false
+    "statusBar.debuggingBackground": "#005f5f"
   }
 }
