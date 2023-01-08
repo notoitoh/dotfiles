@@ -4,7 +4,7 @@ function singleton() {
 }
 
 function aws-sso-check-login() {
-  node $DOTFILES_DIR/resources/.bashrc.d/functions/tools/src/aws-sso-check-login/dest/aws-sso-check-login/aws-sso-check-login.js $*
+  node $DOTFILES_DIR/resources/.zshrc.d/functions/tools/src/aws-sso-check-login/dest/aws-sso-check-login/aws-sso-check-login.js $*
 }
 
 AWS_ORG=$(which aws)

@@ -1,7 +1,7 @@
 echo "Install tools..."
 
 DOTFILES_DIR="${HOME}/dotfiles"
-cd "${DOTFILES_DIR}/resources/.bashrc.d/functions/tools/"
+cd "${DOTFILES_DIR}/resources/.zshrc.d/functions/tools/"
 
 n 16
 yarn install

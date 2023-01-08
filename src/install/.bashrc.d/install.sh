@@ -1,9 +1,9 @@
-echo "Install bashrc..."
+echo "Install zshrc..."
 
-bash ${SCRIPT_DIR}/src/install/.bashrc.d/functions/tools/install.sh
+bash ${SCRIPT_DIR}/src/install/.zshrc.d/functions/tools/install.sh
 
-symlink-backup "${SCRIPT_DIR}/resources/.bashrc.d/.bashrc" "${HOME}/.bashrc" "${SCRIPT_DIR}/resources/.bashrc.d/user.local.sh"
+symlink-backup "${SCRIPT_DIR}/resources/.zshrc.d/.zshrc" "${HOME}/.zshrc" "${SCRIPT_DIR}/resources/.zshrc.d/user.local.sh"
 
-source "${HOME}/.bashrc"
+source "${HOME}/.zshrc"
 
-echo "Install bashrc completed."
+echo "Install zshrc completed."

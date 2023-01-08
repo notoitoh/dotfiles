@@ -23,6 +23,7 @@ brew install wget
 brew install vim
 brew install n
 brew install yarn
+brew install zsh-completions
 brew install git-remote-codecommit
 
 echo "Install brew completed."

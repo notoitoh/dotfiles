@@ -116,8 +116,8 @@ function symlink-move {
 # Check phase
 cd $SCRIPT_DIR
 
-if [ -e "${HOME}/.bash_profile" ] ; then
-  source "${HOME}/.bash_profile"
+if [ -e "${HOME}/.zplofile" ] ; then
+  source "${HOME}/.zplofile"
 fi
 
 if [[ "${DOTFILES_DIR}" ]]; then
@@ -145,8 +145,8 @@ if [[ $(check-os) == "mac" ]]; then
 fi
 
 . ${SCRIPT_DIR}/src/install/brew/install.sh
-. ${SCRIPT_DIR}/src/install/.bash_profile.d/install.sh
-. ${SCRIPT_DIR}/src/install/.bashrc.d/install.sh
+. ${SCRIPT_DIR}/src/install/.zplofile.d/install.sh
+. ${SCRIPT_DIR}/src/install/.zshrc.d/install.sh
 . ${SCRIPT_DIR}/src/install/vscode/install.sh
 . ${SCRIPT_DIR}/src/install/awscli/install.sh
 . ${SCRIPT_DIR}/src/install/dnsmasq/install.sh
