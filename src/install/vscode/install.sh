@@ -24,5 +24,6 @@ code --install-extension "ecmel.vscode-html-css"
 code --install-extension "eamodio.gitlens"
 code --install-extension "visualstudioexptteam.vscodeintellicode"
 code --install-extension "mhutchie.git-graph"
+code --install-extension "Shopify.theme-check-vscode"
 
 echo "Install vscode completed."
