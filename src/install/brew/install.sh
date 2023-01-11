@@ -3,7 +3,8 @@ echo "Install brew..."
 if [[ $(check-os) == "linux" ]]; then
   if [[ ! $(which brew) ]]; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    BREW_PATH="/home/linuxbrew/.linuxbrew/bin/brew"
+    eval "$(${BREW_PATH} shellenv)"
     sudo apt-get install build-essential
     brew install gcc
   fi
@@ -12,7 +13,14 @@ fi
 if [[ $(check-os) == "mac" ]]; then
   if [[ ! $(which brew) ]]; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-    eval "$(/opt/homebrew/bin/brew shellenv)"
+
+    if [[ $(uname -m) == "x86_64" ]]; then
+      BREW_PATH="/usr/local/bin/brew"
+    fi
+    if [[ $(uname -m) == "arm64" ]]; then
+      BREW_PATH="/opt/homebrew/bin/brew"
+    fi
+    eval "$(${BREW_PATH} shellenv)"
   fi
   brew tap homebrew/cask-fonts
   brew install font-hackgen
@@ -24,7 +32,7 @@ brew install vim
 brew install n
 brew install jq
 brew install yarn
-brew install bash-completion
+brew install zsh-completions
 brew install git-remote-codecommit
 
 echo "Install brew completed."
