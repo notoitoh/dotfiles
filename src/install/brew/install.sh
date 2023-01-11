@@ -1,9 +1,9 @@
 echo "Install brew..."
 
 if [[ $(check-os) == "linux" ]]; then
+  BREW_PATH="/home/linuxbrew/.linuxbrew/bin/brew"
   if [[ ! $(which brew) ]]; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    BREW_PATH="/home/linuxbrew/.linuxbrew/bin/brew"
     eval "$(${BREW_PATH} shellenv)"
     sudo apt-get install build-essential
     brew install gcc
@@ -11,15 +11,14 @@ if [[ $(check-os) == "linux" ]]; then
 fi
 
 if [[ $(check-os) == "mac" ]]; then
+  if [[ $(uname -m) == "x86_64" ]]; then
+    BREW_PATH="/usr/local/bin/brew"
+  fi
+  if [[ $(uname -m) == "arm64" ]]; then
+    BREW_PATH="/opt/homebrew/bin/brew"
+  fi
   if [[ ! $(which brew) ]]; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-
-    if [[ $(uname -m) == "x86_64" ]]; then
-      BREW_PATH="/usr/local/bin/brew"
-    fi
-    if [[ $(uname -m) == "arm64" ]]; then
-      BREW_PATH="/opt/homebrew/bin/brew"
-    fi
     eval "$(${BREW_PATH} shellenv)"
   fi
   brew tap homebrew/cask-fonts
