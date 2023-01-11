@@ -3,7 +3,7 @@ echo "Install tools..."
 DOTFILES_DIR="${HOME}/dotfiles"
 cd "${DOTFILES_DIR}/resources/.zshrc.d/functions/tools/"
 
-n 16
+echo "$password" | sudo -S n 16
 yarn install
 yarn aws-sso-check-login:build
 
