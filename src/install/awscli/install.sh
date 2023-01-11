@@ -15,6 +15,8 @@ if [[ ! -e "/usr/local/bin/aws" ]]; then
     echo "$password" | sudo -S installer -pkg AWSCLIV2.pkg -target /
   fi
 
+  . "${SCRIPT_DIR}/src/install/awscli/session-manager-plugin/install.sh"
+
   cd ..
   rm -rf temp
 

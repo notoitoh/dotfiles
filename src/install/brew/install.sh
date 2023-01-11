@@ -22,6 +22,7 @@ fi
 brew install wget
 brew install vim
 brew install n
+brew install jq
 brew install yarn
 brew install zsh-completions
 brew install git-remote-codecommit
