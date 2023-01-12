@@ -1,6 +1,6 @@
 function zle-line-init zle-keymap-select {
-    VIM_NORMAL="%K{208}%F{black}■%k%f%K{208}%F{white} % NORMAL %k%f%K{black}%F{208}■%k%f"
-    VIM_INSERT="%K{075}%F{black}■%k%f%K{075}%F{white} % INSERT %k%f%K{black}%F{075}■%k%f"
+    VIM_NORMAL="%k%f%K{208}%F{white} % NORMAL %k%f%K{black}%F{208}"
+    VIM_INSERT="%k%f%K{075}%F{white} % INSERT %k%f%K{black}%F{075}"
     VIMPROMPT="${${KEYMAP/vicmd/$VIM_NORMAL}/(main|viins)/$VIM_INSERT}"
     PROMPT="${VIMPROMPT}
 %K{blue}%F{white} %F{white}%~ %k%F{white} $%f "
