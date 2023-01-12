@@ -24,6 +24,7 @@ bindkey -M vicmd 'y' vi-yank-xclip
 autoload -Uz compinit && compinit
 
 . "${DOTFILES_DIR}/resources/.zshrc.d/prompt.sh"
+. "${DOTFILES_DIR}/resources/.zshrc.d/alias.sh"
 
 aws-sso-check-login --force >/dev/null
 sso-check
