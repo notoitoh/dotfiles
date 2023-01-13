@@ -13,6 +13,7 @@ EOF
 fi
 
 symlink-backup "${SCRIPT_DIR}/resources/.zprofile.d/.zprofile" "${HOME}/.zprofile" "${SCRIPT_DIR}/resources/.zprofile.d/user.local.sh"
+symlink-replace "${SCRIPT_DIR}/resources/.zprofile.d/.zprofile" "${HOME}/.bash_plofile"
 
 source ~/.zprofile
 

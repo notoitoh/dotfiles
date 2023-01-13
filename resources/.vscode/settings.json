@@ -6,7 +6,8 @@
     "zsh": {
       "path": "zsh",
       "args": [
-        "-i"
+        "-i",
+        "-l"
       ],
       "overrideName": true,
       "icon": "terminal-bash",
@@ -18,7 +19,8 @@
     "zsh": {
       "path": "zsh",
       "args": [
-        "-i"
+        "-i",
+        "-l"
       ],
       "overrideName": true,
       "icon": "terminal-bash",
