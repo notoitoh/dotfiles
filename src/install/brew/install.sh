@@ -33,5 +33,8 @@ brew install jq
 brew install yarn
 brew install zsh-completions
 brew install git-remote-codecommit
+brew install pict
+brew install md5sha1sum
+brew install tree
 
 echo "Install brew completed."
