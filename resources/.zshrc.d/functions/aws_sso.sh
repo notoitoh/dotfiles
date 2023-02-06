@@ -1,5 +1,5 @@
 function singleton() {
-  hash=$(echo "$*" | mdgsum | awk '{ print $1 }')
+  hash=$(echo "$*" | md5sum | awk '{ print $1 }')
   screen -x $hash > /dev/null || ((screen -UAmdS $hash $*) && (screen -x $hash))
 }
 
