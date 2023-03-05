@@ -186,5 +186,7 @@
 
   "blockman.n04ColorComboPreset": "Classic Dark 1 (Super gradients)",
   "blockman.n24AnalyzeRoundBrackets": true,
-  "blockman.n23AnalyzeSquareBrackets": true
+  "blockman.n23AnalyzeSquareBrackets": true,
+
+  "jest.autoRun": "off"
 }
