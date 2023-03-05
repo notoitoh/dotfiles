@@ -25,5 +25,7 @@ code --install-extension "eamodio.gitlens"
 code --install-extension "visualstudioexptteam.vscodeintellicode"
 code --install-extension "mhutchie.git-graph"
 code --install-extension "Shopify.theme-check-vscode"
+code --install-extension "Orta.vscode-jest"
+code --install-extension "leodevbro.blockman"
 
 echo "Install vscode completed."

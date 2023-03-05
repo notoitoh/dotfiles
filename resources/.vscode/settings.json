@@ -35,6 +35,9 @@
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
 
+  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.wordWrap": "off",
+
   "editor.formatOnType": true,
   "editor.formatOnPaste": true,
   "editor.fontFamily": "'HackGen', 'monospace'",
@@ -42,6 +45,10 @@
   "editor.stickyTabStops": true,
   "editor.stickyScroll.enabled": true,
   "editor.tabSize": 2,
+  "editor.inlayHints.enabled": "off",
+  "editor.guides.indentation": false,
+  "editor.guides.bracketPairs": false,
+  "editor.wordWrap": "off",
 
   "vim.easymotion": true,
   "vim.useSystemClipboard": true,
@@ -163,15 +170,21 @@
 
   "git.confirmSync": false,
   "git.autofetch": true,
+
   "gitlens.views.searchAndCompare.avatars": false,
   "gitlens.views.searchAndCompare.files.layout": "list",
-  "diffEditor.ignoreTrimWhitespace": false,
 
   "hediet.vscode-drawio.theme": "atlas",
   "redhat.telemetry.enabled": false,
   "workbench.colorCustomizations": {
     "statusBar.background": "#005f5f",
     "statusBar.noFolderBackground": "#005f5f",
-    "statusBar.debuggingBackground": "#005f5f"
-  }
+    "statusBar.debuggingBackground": "#005f5f",
+    "editor.lineHighlightBackground": "#1073cf2d",
+    "editor.lineHighlightBorder": "#9fced11f"
+  },
+
+  "blockman.n04ColorComboPreset": "Classic Dark 1 (Super gradients)",
+  "blockman.n24AnalyzeRoundBrackets": true,
+  "blockman.n23AnalyzeSquareBrackets": true
 }
