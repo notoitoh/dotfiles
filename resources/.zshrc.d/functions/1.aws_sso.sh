@@ -1,8 +1,3 @@
-function singleton() {
-  hash=$(echo "$*" | md5sum | awk '{ print $1 }')
-  screen -x $hash > /dev/null || ((screen -UAmdS $hash $*) && (screen -x $hash))
-}
-
 function aws-sso-check-login() {
   node $DOTFILES_DIR/resources/.zshrc.d/functions/tools/src/aws-sso-check-login/dest/aws-sso-check-login/aws-sso-check-login.js $*
 }
@@ -13,7 +8,7 @@ function sso-check() {
   sso_test=$($(aws-sso-check-login > /dev/null 2>&1) || echo $?)
   if [ "$sso_test" ] && [ "$sso_test" -ne 0 ]; then
     echo "Login required."
-    $AWS_ORG sso login
+    singleton $AWS_ORG sso login
   fi
 }
 

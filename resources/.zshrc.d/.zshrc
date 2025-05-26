@@ -1,3 +1,4 @@
+. "${DOTFILES_DIR}/resources/.zshrc.d/alias.sh"
 if [ -e "${DOTFILES_DIR}/resources/.zshrc.d/user.local.sh" ] ; then
   . "${DOTFILES_DIR}/resources/.zshrc.d/user.local.sh"
 fi
@@ -24,7 +25,6 @@ bindkey -M vicmd 'y' vi-yank-xclip
 autoload -Uz compinit && compinit
 
 . "${DOTFILES_DIR}/resources/.zshrc.d/prompt.sh"
-. "${DOTFILES_DIR}/resources/.zshrc.d/alias.sh"
 
 aws-sso-check-login --force >/dev/null
 sso-check
