@@ -16,8 +16,7 @@ import { Common } from '../common/common';
   }
   const temp = await Common.readJsonFromFile(fileName);
   const expirationDate = temp?.['expiration'] ? new Date(temp?.['expiration']) : undefined;
-  if (expirationDate && expirationDate > new Date())
-  {
+  if (expirationDate && expirationDate > new Date()) {
     process.exit(0);
   }
   else {

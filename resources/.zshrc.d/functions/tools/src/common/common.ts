@@ -1,10 +1,10 @@
 import { defaultProvider } from "@aws-sdk/credential-provider-node";
 import { fromSSO } from "@aws-sdk/credential-provider-sso";
-import { Credentials } from "@aws-sdk/types";
+import { AwsCredentialIdentity } from "@aws-sdk/types";
 import * as fs from 'fs';
 
 export namespace Common {
-  export async function getCredentials(profile?: string): Promise<Credentials> {
+  export async function getCredentials(profile?: string): Promise<AwsCredentialIdentity> {
     const credentialProvider = profile ? fromSSO({ profile: profile }) : defaultProvider();
     return credentialProvider();
   }
